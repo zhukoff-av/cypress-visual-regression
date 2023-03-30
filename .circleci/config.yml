@@ -1,10 +1,7 @@
-version: '2.1'
+version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  welcome: circleci/welcome-orb@0.4.1
 workflows:
-  use-my-orb:
-    jobs:
-      - cypress/run:
-          cypress-command: npx cypress run --browser chrome
-          install-browsers: true
-          start-command: 'npm run start:dev'
+    welcome:
+      jobs:
+        - welcome/run
