@@ -1,7 +1,9 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@3
 workflows:
-    build:
-      jobs:
-        - cypress/run
+  build:
+    jobs:
+      - cypress/run:
+          package-manager: 'npm'
+          start-command: 'npm run start'
